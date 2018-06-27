@@ -9,11 +9,27 @@ class SendEmailController extends Controller
 {
     public function customize_notifications(){
         $new_employee = SendEmail::where('email_for', 'New Employee')->first();
+        $emp_reg = '
+        <p>
+        Thank you for signing up. Your account is under review by the administrator. 
+        </p>
+        <p>
+        Kindly wait for an email notification regarding the activation of your account.
+        </p>
+        <br>
+        <p>
+            If you have any questions or require further assitance you can send an email to ####@########.
+        </p>
+        <br>
+        <p>Thanks,</p>
+        <p>The Staff.is Team</p>
+        <br>
+        <p><i>This is an automated notification; please do not respond to this email.</i></p';
         if(!$new_employee){
             $create_new_employee = new SendEmail;
             $create_new_employee->email_for = 'New Employee';
             $create_new_employee->subject = 'Staff.is - Welcome!';
-            $create_new_employee->body = 'Thank you for registering at Staff.is.';
+            $create_new_employee->body = $emp_reg;
             $create_new_employee->save();
         }
 

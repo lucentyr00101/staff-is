@@ -1,3 +1,3 @@
-<h1>Hi, {{ $email }}!</h1>
+<h1>Dear, {{ $email }}!</h1>
 
 {!! $body !!}
