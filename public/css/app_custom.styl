@@ -1,0 +1,105 @@
+primary-color = #52335b
+secondary-color = #fff
+html
+  body
+    background-image url('../img/background-image.jpg')
+    background-size cover
+    background-repeat no-repeat
+    min-height 100vh
+    #app
+      .navbar
+        background-color primary-color
+        .container
+          width 80%
+          .navbar-header
+            .navbar-brand
+              color secondary-color
+              &:hover, &:active
+                background secondary-color
+                color primary-color
+          .navbar-collapse
+            .navbar-nav
+              li
+                a
+                  color secondary-color
+                  &:hover, &:active
+                    background secondary-color
+                    color primary-color
+      .container
+        width 100%
+        .form-outer-container
+          display flex
+          justify-content center
+          align-items center
+          margin 30px auto
+          .alert-container
+            width 80%
+            margin 0 auto
+            font-weight 700
+          .form-container
+            width 400px
+            background-color secondary-color
+            color primary-color
+            border-top 5px solid primary-color
+            box-shadow 5px 5px 10px #999, -5px 5px 10px #999
+            padding 30px 0
+            opacity 0.90
+            .form-header
+              margin 10px auto 30px
+              text-align center
+              h1
+                margin 0
+            .form-body
+              display block
+              //login, reset password, send reset password link
+              .form
+                width 80%
+                margin 0 auto
+                .form-group
+                  margin 0 0 20px
+                  .form-input
+                    border 1px solid primary-color
+                    color primary-color
+                  .form-submit
+                    width 100%
+                    background-color primary-color
+                    color secondary-color
+                  .form-link
+                    color primary-color
+                    &:hover, &:active, &:focus
+                      outline none
+              //register
+              .nav-tabs
+                background-color secondary-color
+                color primary-color
+                li
+                  &.active
+                    a
+                      background-color primary-color
+                      color secondary-color
+                      border-radius 7px
+                      &:hover, &:focus
+                        background-color primary-color
+                        color secondary-color
+                  a
+                    color primary-color
+              .tab-content
+                padding 20px 0 0
+                margin 0 auto -20px
+                .tab-pane
+                  .form
+                    width 80%
+                    margin 0 auto
+                    .form-group
+                      margin 0 0 15px
+                      .form-input
+                        border 1px solid primary-color
+                        color primary-color
+                      .form-submit
+                        width 100%
+                        background-color primary-color
+                        color secondary-color
+                      .form-link
+                        color primary-color
+                        &:hover, &:active, &:focus
+                          outline none

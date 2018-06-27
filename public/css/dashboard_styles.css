@@ -1,0 +1,24 @@
+.theme-btn-dk {
+    color: #fff !important;
+    background: #2f0e46 !important;
+    border: 0 !important;
+    font-size: 13px;
+    transition: background 0.3s linear, color 0.3s linear;
+}
+
+
+.theme-btn-lt {
+    background: #6f2ca1 !important;
+    color: #fff !important;
+    border: 0 !important;
+    font-size: 13px;
+    transition: background 0.3s linear, color 0.3s linear;
+}
+
+.theme-btn-lt:hover {
+    background: #2f0e46 !important;
+}
+
+.theme-btn-dk:hover {
+    background: #6f2ca1 !important;
+}

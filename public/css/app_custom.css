@@ -1,0 +1,130 @@
+html body {
+  background-image: url("../img/background-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+html body #app .navbar {
+  background-color: #52335b;
+}
+html body #app .navbar .container {
+  width: 80%;
+}
+html body #app .navbar .container .navbar-header .navbar-brand {
+  color: #fff;
+}
+html body #app .navbar .container .navbar-header .navbar-brand:hover,
+html body #app .navbar .container .navbar-header .navbar-brand:active {
+  background: #fff;
+  color: #52335b;
+}
+html body #app .navbar .container .navbar-collapse .navbar-nav li a {
+  color: #fff;
+}
+html body #app .navbar .container .navbar-collapse .navbar-nav li a:hover,
+html body #app .navbar .container .navbar-collapse .navbar-nav li a:active {
+  background: #fff;
+  color: #52335b;
+}
+html body #app .container {
+  width: 100%;
+}
+html body #app .container .form-outer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+}
+html body #app .container .form-outer-container .alert-container {
+  width: 80%;
+  margin: 0 auto;
+  font-weight: 700;
+}
+html body #app .container .form-outer-container .form-container {
+  width: 400px;
+  background-color: #fff;
+  color: #52335b;
+  border-top: 5px solid #52335b;
+  box-shadow: 5px 5px 10px #999, -5px 5px 10px #999;
+  padding: 30px 0;
+  opacity: 0.9;
+}
+html body #app .container .form-outer-container .form-container .form-header {
+  margin: 10px auto 30px;
+  text-align: center;
+}
+html body #app .container .form-outer-container .form-container .form-header h1 {
+  margin: 0;
+}
+html body #app .container .form-outer-container .form-container .form-body {
+  display: block;
+}
+html body #app .container .form-outer-container .form-container .form-body .form {
+  width: 80%;
+  margin: 0 auto;
+}
+html body #app .container .form-outer-container .form-container .form-body .form .form-group {
+  margin: 0 0 20px;
+}
+html body #app .container .form-outer-container .form-container .form-body .form .form-group .form-input {
+  border: 1px solid #52335b;
+  color: #52335b;
+}
+html body #app .container .form-outer-container .form-container .form-body .form .form-group .form-submit {
+  width: 100%;
+  background-color: #52335b;
+  color: #fff;
+}
+html body #app .container .form-outer-container .form-container .form-body .form .form-group .form-link {
+  color: #52335b;
+}
+html body #app .container .form-outer-container .form-container .form-body .form .form-group .form-link:hover,
+html body #app .container .form-outer-container .form-container .form-body .form .form-group .form-link:active,
+html body #app .container .form-outer-container .form-container .form-body .form .form-group .form-link:focus {
+  outline: none;
+}
+html body #app .container .form-outer-container .form-container .form-body .nav-tabs {
+  background-color: #fff;
+  color: #52335b;
+}
+html body #app .container .form-outer-container .form-container .form-body .nav-tabs li.active a {
+  background-color: #52335b;
+  color: #fff;
+  border-radius: 7px;
+}
+html body #app .container .form-outer-container .form-container .form-body .nav-tabs li.active a:hover,
+html body #app .container .form-outer-container .form-container .form-body .nav-tabs li.active a:focus {
+  background-color: #52335b;
+  color: #fff;
+}
+html body #app .container .form-outer-container .form-container .form-body .nav-tabs li a {
+  color: #52335b;
+}
+html body #app .container .form-outer-container .form-container .form-body .tab-content {
+  padding: 20px 0 0;
+  margin: 0 auto -20px;
+}
+html body #app .container .form-outer-container .form-container .form-body .tab-content .tab-pane .form {
+  width: 80%;
+  margin: 0 auto;
+}
+html body #app .container .form-outer-container .form-container .form-body .tab-content .tab-pane .form .form-group {
+  margin: 0 0 15px;
+}
+html body #app .container .form-outer-container .form-container .form-body .tab-content .tab-pane .form .form-group .form-input {
+  border: 1px solid #52335b;
+  color: #52335b;
+}
+html body #app .container .form-outer-container .form-container .form-body .tab-content .tab-pane .form .form-group .form-submit {
+  width: 100%;
+  background-color: #52335b;
+  color: #fff;
+}
+html body #app .container .form-outer-container .form-container .form-body .tab-content .tab-pane .form .form-group .form-link {
+  color: #52335b;
+}
+html body #app .container .form-outer-container .form-container .form-body .tab-content .tab-pane .form .form-group .form-link:hover,
+html body #app .container .form-outer-container .form-container .form-body .tab-content .tab-pane .form .form-group .form-link:active,
+html body #app .container .form-outer-container .form-container .form-body .tab-content .tab-pane .form .form-group .form-link:focus {
+  outline: none;
+}

@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family:'Open Sans';
+}
+
+body, p, ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:focus {
+	text-decoration: none;
+}
+
+.left-sidebar {
+	width: 15%;
+	background: #313a43;
+	display: inline-block;
+	vertical-align: top;
+	padding-bottom: 22.7%;
+	/* padding-bottom: 300px; */
+}
+
+.body-container {
+	width: 85%;
+	background: #e2e2e2;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.body-header {
+	width: 100%;
+	background: #fff;
+	position: relative;
+	height: 70px;
+}
+
+.body-content {
+	text-align: justify;
+	width: 100%;
+	padding: 25px 30px;
+}
+
+.sidebar-logo {
+	display: inline-block;
+	vertical-align: top;
+	width: 15%;
+	text-align: center;
+	margin-top: 10px;
+}
+
+ul.sidebar-menu-list {
+	list-style-type: none;
+	font-size: 1.5em;
+	padding-left: 0px;
+	margin: 0;
+}
+
+ul.sidebar-menu-list li {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 3em;
+	font-size: 0.7em;
+}
+
+div.sidebar-menu-item a {
+	color: #fff;
+	display: block;
+}
+
+div.sidebar-menu-item {
+	padding: 5px 0px;
+	background: linear-gradient(to right,#52335b 50%,transparent 50%);
+	background-position: 100% 0;
+	background-size: 200% 100%;
+	transition: all .25s ease-in;
+}
+
+div.sidebar-menu-item:hover:not(.main):not(.menu-active){
+	background-position: 0 0;
+}
+
+ul.sidebar-menu-list img {
+	width: 30px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 9%;
+}
+
+.menu-active {
+	background: #52335b !important;
+	border-left:5px solid #fff;
+}
+
+.sidebar-menu-wrapper {
+	padding-left: 10px;
+	margin: 0 auto;
+}
+
+.account-container {
+	position: absolute;
+	right: 0;
+	width: 336px;
+	display: inline-block;
+	vertical-align: top;
+	z-index: 2;
+}
+
+.account-name, .account-img {
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 8px;
+}
+
+.account-name {
+	width: 50%;
+	margin-top: 4%;
+	text-align: center;
+	word-wrap: break-word;
+}
+
+div.account-name a span {
+	color: #000;
+}
+
+.sidebar-menu-item.main {
+	border-bottom: 2px solid #5f6974;
+	text-align: center;
+	margin: 10px 0px;
+}
+
+.account-burger-container {
+	cursor: pointer;
+	background: #52335b;
+	position: absolute;
+	right: 0
+}
+
+.bar1, .bar2, .bar3 {
+	width: 35px;
+	height: 5px;
+	background-color: #fff;
+	margin: 6px 0;
+	transition: 0.4s;
+	border-radius: 15px;
+}
+
+.change .bar1 {
+	-webkit-transform: rotate(-495deg) translate(-9px, -5px); /*translate(-9px, 6px);*/
+	transform: rotate(-495deg) translate(-9px, -5px); /*translate(-9px, 6px);*/
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+	-webkit-transform: rotate(495deg) translate(-10px, 7px); /*translate(-8px, -8px);*/
+	transform: rotate(495deg) translate(-10px, 7px); /*translate(-8px, -8px);*/
+}
+
+.account-burger-container {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.account-burger {
+	padding: 16px;
+}
+
+div.account-click ul a img, div.account-click ul a li {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+div.account-click-item-wrapper {
+	width: 80%;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+div.account-click ul a img {
+	margin-right: 15px;
+	width: 25px;
+}
+
+div.account-click ul a li {
+	color: #fff;
+}
+
+div.account-click {
+	background: #222222;
+	display: none;
+	-webkit-transition: opacity 0.5s linear;
+	-moz-transition: opacity 0.5s linear;
+	-ms-transition: opacity 0.5s linear;
+	-o-transition: opacity 0.5s linear;
+	transition: opacity 0.5s linear;
+}
+
+.show-account {
+	display: block !important;
+	-webkit-transition: opacity 0.5s linear;
+	-moz-transition: opacity 0.5s linear;
+	-ms-transition: opacity 0.5s linear;
+	-o-transition: opacity 0.5s linear;
+	transition: opacity 0.5s linear;
+}
+
+.content-container {
+	display: flex;
+	min-height: calc(100vh - 70px)
+}
+
+.account-header {
+	position: relative;
+	margin-bottom: 16px;
+}
+
+div.acct-name a {
+	display: block;
+	line-height: 3;
+}
+
+.admin-submenu ul li {
+	display: block;
+	margin-left: 5%;
+}
+
+.admin-submenu ul a {
+	display: block;
+	color: #fff;
+	font-size:20px;
+}
+
+.admin-submenu {
+	background: #52335b;
+	height: auto;
+	display: none;
+}
+
+.with-submenu:hover > div.admin-submenu {
+	display: block;
+}
+
+.health-problems label {
+	display:block !important;
+}
+
+.profile-pic {
+	padding-right: 0 !important;
+}
+
+.profile-pic img {
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+}
+
+.profile-pic:hover .edit {
+	display: block;
+}
+
+.navbar-pic img {
+	height: 50px;
+	margin-top: 15%;
+	object-fit: cover;
+}
+
+.edit {
+	padding-top: 7px;	
+	padding-right: 7px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: none;
+}
+
+div.edit i.fa.fa-pencil {
+	font-size: 25px;
+	color: #52335b;
+	border: 2px solid #52335b;
+	padding: 6px;
+	border-radius: 8px;
+}
