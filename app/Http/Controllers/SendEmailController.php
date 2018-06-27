@@ -22,7 +22,7 @@ class SendEmailController extends Controller
         </p>
         <br>
         <p>Thanks,</p>
-        <p>The Staff.is Team</p>
+        <p>The Staff.is Team</p> 
         <br>
         <p><i>This is an automated notification; please do not respond to this email.</i></p';
         if(!$new_employee){
