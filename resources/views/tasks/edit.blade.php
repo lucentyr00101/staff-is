@@ -37,7 +37,7 @@
     <table class="table table-hover table-responsive table-striped schedule-tbl">
         <thead>
             <tr>
-                <th>Days</th>
+                <th>Date</th>
                 <th>Time In</th>
                 <th>Time Out</th>
                 <th></th>
@@ -50,7 +50,7 @@
                 foreach($workforces->result as $result_item){ ?>
                 <tr class="schedule_row">
                     <input type="hidden" name='hidden_row[]' value='x' />
-                    <td>{{ Form::select('schedule_day'.$i.'[]', ['Sunday' => 'Sunday', 'Monday' => 'Monday', 'Tuesday' => 'Tuesday', 'Wednesday' => 'Wednesday', 'Thursday' => 'Thursday', 'Friday' => 'Friday', 'Saturday' => 'Saturday'], explode(', ', $result_item[0]['days']), ['class' => 'form-control multiselect-ui', 'multiple', 'required']) }}</td>
+                    <td>{{ Form::text('schedule_date'.$i.'[]', $result_item[0]['date'], ['class' => 'form-control schedule_date']) }}</td>
                     <td>{{ Form::text('schedule_time_in'.$i , $result_item[0]['time_in'], ['class' => 'form-control schedule_time']) }}</td>
                     <td>{{ Form::text('schedule_time_out'.$i ,$result_item[0]['time_out'], ['class' => 'form-control schedule_time']) }}</td>
                     <td><input type="button" value="-" class="theme-btn-dk btn pull-right rem-schedule" /></td>

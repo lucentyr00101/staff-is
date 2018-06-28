@@ -60,11 +60,11 @@ class WorkforceManagerController extends Controller
                 $elements_to_be_removed = [];
                 foreach($new_arr as $single_sched){
 
-                    $base_day = $base_sched['schedule_day'];
+                    $base_day = $base_sched['schedule_date'];
                     $base_time_in = $base_sched['schedule_time_in'];
                     $base_time_out = $base_sched['schedule_time_out'];
 
-                    $day = $single_sched['schedule_day'];
+                    $day = $single_sched['schedule_date'];
                     $time_in = $single_sched['schedule_time_in'];
                     $time_out = $single_sched['schedule_time_out'];
 
@@ -141,10 +141,10 @@ class WorkforceManagerController extends Controller
         }
 
         for($i = 1; $i <= count($request->hidden_row); $i++){
-            foreach($request->input('schedule_day'.$i) as $r){
+            foreach($request->input('schedule_date'.$i) as $r){
                 $schedule = new TaskSchedule;
                 $schedule->workforce_id = $workforce->id;
-                $schedule->schedule_day = $r;
+                $schedule->schedule_date = $r;
                 $schedule->schedule_time_in = $request->input('schedule_time_in'.$i);
                 $schedule->schedule_time_out = $request->input('schedule_time_out'.$i);
                 $schedule->save();
@@ -194,7 +194,7 @@ class WorkforceManagerController extends Controller
         }
 
         //schedule conversion start
-        if(($company->company_schedule != null) && (count($workforces->task_schedule))){
+        if(count($workforces->task_schedule)){
             foreach($workforces->task_schedule as $c){
                 $a = json_decode(json_encode($c), true);
                 $b[] = $a;
@@ -211,11 +211,11 @@ class WorkforceManagerController extends Controller
                 $elements_to_be_removed = [];
                 foreach($new_arr as $single_sched){
 
-                    $base_day = $base_sched['schedule_day'];
+                    $base_day = $base_sched['schedule_date'];
                     $base_time_in = $base_sched['schedule_time_in'];
                     $base_time_out = $base_sched['schedule_time_out'];
 
-                    $day = $single_sched['schedule_day'];
+                    $day = $single_sched['schedule_date'];
                     $time_in = $single_sched['schedule_time_in'];
                     $time_out = $single_sched['schedule_time_out'];
 
@@ -227,9 +227,9 @@ class WorkforceManagerController extends Controller
                     $ctr++;
                 }
 
-                $days_str = implode(', ', $days_with_same_time);
+                $date_str = implode(', ', $days_with_same_time);
                 ${"schedule$count"}[] = array(
-                    'days' => $days_str,
+                    'date' => $date_str,
                     'time_in' => $base_time_in,
                     'time_out' => $base_time_out,
                 );
@@ -270,7 +270,7 @@ class WorkforceManagerController extends Controller
     {
         $workforces = Workforce::find($id);
         //schedule conversion start
-        if(($company->company_schedule != null) && (count($workforces->task_schedule))){
+        if(count($workforces->task_schedule)){
             foreach($workforces->task_schedule as $c){
                 $a = json_decode(json_encode($c), true);
                 $b[] = $a;
@@ -285,11 +285,11 @@ class WorkforceManagerController extends Controller
                 $elements_to_be_removed = [];
                 foreach($new_arr as $single_sched){
 
-                    $base_day = $base_sched['schedule_day'];
+                    $base_day = $base_sched['schedule_date'];
                     $base_time_in = $base_sched['schedule_time_in'];
                     $base_time_out = $base_sched['schedule_time_out'];
 
-                    $day = $single_sched['schedule_day'];
+                    $day = $single_sched['schedule_date'];
                     $time_in = $single_sched['schedule_time_in'];
                     $time_out = $single_sched['schedule_time_out'];
 
@@ -300,9 +300,9 @@ class WorkforceManagerController extends Controller
                     $ctr++;
                 }
 
-                $days_str = implode(', ', $days_with_same_time);
+                $date = implode(', ', $days_with_same_time);
                 ${"schedule$count"}[] = array(
-                    'days' => $days_str,
+                    'date' => $date,
                     'time_in' => $base_time_in,
                     'time_out' => $base_time_out,
                 );
@@ -348,10 +348,10 @@ class WorkforceManagerController extends Controller
         }
 
         for($i = 1; $i <= count($request->hidden_row); $i++){
-            foreach($request->input('schedule_day'.$i) as $r){
+            foreach($request->input('schedule_date'.$i) as $r){
                 $schedule = new TaskSchedule;
                 $schedule->workforce_id = $workforces->id;
-                $schedule->schedule_day = $r;
+                $schedule->schedule_date = $r;
                 $schedule->schedule_time_in = $request->input('schedule_time_in'.$i);
                 $schedule->schedule_time_out = $request->input('schedule_time_out'.$i);
                 $schedule->save();
@@ -388,10 +388,10 @@ class WorkforceManagerController extends Controller
         $search = Workforce::whereHas('task_schedule', function($q) use($request){
 
             //FIX
-            if($request->search_schedule_day != null){
+            if($request->search_schedule_date != null){
                 $q->where(function($a) use($request){
-                    foreach($request->search_schedule_day as $day){
-                        $a->orWhere('schedule_day', $day); //use where for more specific results
+                    foreach($request->search_schedule_date as $day){
+                        $a->orWhere('schedule_date', $day); //use where for more specific results
                     }
                 });
             }

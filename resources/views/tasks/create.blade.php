@@ -44,7 +44,7 @@
 	<table class="table table-striped table-responsive schedule-tbl">
 		<thead>
 			<tr>
-				<th>Day <span style="color:Red;">*</span></th>
+				<th>Date <span style="color:Red;">*</span></th>
 				<th>Time In <span style="color:Red;">*</span></th>
 				<th>Time Out <span style="color:Red;">*</span></th>
 				<th></th>
@@ -53,7 +53,8 @@
 		<tbody>
 			<tr class='schedule_row'>
 				<input type="hidden" name='hidden_row[]' value='x' />
-				<td>{{ Form::select('schedule_day1[]', ['Sunday' => 'Sunday', 'Monday' => 'Monday', 'Tuesday' => 'Tuesday', 'Wednesday' => 'Wednesday', 'Thursday' => 'Thursday', 'Friday' => 'Friday', 'Saturday' => 'Saturday'], null, ['class' => 'form-control multiselect-ui', 'multiple', 'required']) }}</td>
+				{{-- <td>{{ Form::select('schedule_day1[]', ['Sunday' => 'Sunday', 'Monday' => 'Monday', 'Tuesday' => 'Tuesday', 'Wednesday' => 'Wednesday', 'Thursday' => 'Thursday', 'Friday' => 'Friday', 'Saturday' => 'Saturday'], null, ['class' => 'form-control multiselect-ui', 'multiple', 'required']) }}</td> --}}
+				<td>{{ Form::text('schedule_date1[]', null, ['class' => 'form-control schedule_date']) }}</td>
 				<td>{{ Form::text('schedule_time_in1', null, ['class' => 'form-control schedule_time', 'required']) }}</td>
 				<td>{{ Form::text('schedule_time_out1', null, ['class' => 'form-control schedule_time', 'required']) }}</td>
 				<td><input type="button" value="-" class="theme-btn-dk btn pull-right rem-schedule" /></td>
@@ -71,7 +72,7 @@
 	{{ Form::submit('Submit', array('class' => 'submit action-button btn btn-success', 'name' => 'submit')) }}
 </div>
 {{Form::close()}}
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
 <script src="{{ asset('js/app.js') }}"></script>
 <script src='{{ asset("js/multiselect.js") }}'></script>
 <script src="{{ asset('js/timepicker.js') }}"></script>

@@ -192,7 +192,7 @@
 			<table class="table table-striped table-hover">
 				<thead>
 					<tr>
-						<th>Day/s</th>
+						<th>Date</th>
 						<th>Time In</th>
 						<th>Time Out</th>
 					</tr>
@@ -202,7 +202,7 @@
 					@if(!empty($workforces->result))
 					@foreach($workforces->result as $result_item)
 					<tr>
-						<td>{{ $result_item[0]['days'] }}</td>
+						<td>{{ $result_item[0]['date'] }}</td>
 						<td>{{ $result_item[0]['time_in'] }}</td>
 						<td>{{ $result_item[0]['time_out'] }}</td>
 					</tr>
@@ -280,19 +280,19 @@
 		<h1>Task Schedule</h1>
 		<table class="table">
 			<thead>
-				<th>Days</th>
+				<th>Date</th>
 				<th>Time In</th>
 				<th>Time Out</th>
 			</thead>
 			<tbody>
 				@if(!empty($workforces->result))
-				@foreach($workforces->result as $result_item)
-				<tr>
-					<td>{{ $result_item[0]['days'] }}</td>
-					<td>{{ $result_item[0]['time_in'] }}</td>
-					<td>{{ $result_item[0]['time_out'] }}</td>
-				</tr>
-				@endforeach
+					@foreach($workforces->result as $result_item)
+					<tr>
+						<td>{{ $result_item[0]['date'] }}</td>
+						<td>{{ $result_item[0]['time_in'] }}</td>
+						<td>{{ $result_item[0]['time_out'] }}</td>
+					</tr>
+					@endforeach
 				@endif
 			</tbody>
 		</table>
