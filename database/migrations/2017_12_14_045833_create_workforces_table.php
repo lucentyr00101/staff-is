@@ -18,7 +18,7 @@ class CreateWorkforcesTable extends Migration
             $table->integer('company_id')->unsigned();
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
             $table->string('work_type');
-            $table->string('work_schedule');
+            $table->string('work_type_other')->nullable();
             $table->string('work_location');
             $table->text('extra_requirements');
             $table->string('employee_required');

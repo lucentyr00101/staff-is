@@ -16,7 +16,6 @@ class AddColumnsToWorkforceTable extends Migration
         Schema::table('workforces', function (Blueprint $table) {
             $table->time('work_schedule_start')->nullable()->after('work_type');
             $table->time('work_schedule_end')->nullable()->after('work_schedule_start');
-            $table->dropColumn('work_schedule');
         });
     }
 
@@ -30,7 +29,6 @@ class AddColumnsToWorkforceTable extends Migration
         Schema::table('workforces', function (Blueprint $table) {
             $table->dropColumn('work_schedule_start');
             $table->dropColumn('work_schedule_end');
-            $table->string('work_schedule')->nullable();
         });
     }
 }

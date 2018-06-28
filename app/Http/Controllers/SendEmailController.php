@@ -14,8 +14,10 @@ class SendEmailController extends Controller
         Thank you for signing up. Your account is under review by the administrator. 
         </p>
         <p>
-        Kindly wait for an email notification regarding the activation of your account.
+        You may now login by clicking the button below.
         </p>
+        <br>
+        <a href="'.url('/login').'">Click to login</a>
         <br>
         <p>
             If you have any questions or require further assitance you can send an email to ####@########.

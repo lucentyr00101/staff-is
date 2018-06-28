@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Create Your Profil</script>e</title>
+	<title>Create Your Profile</title>
 	<link href="{{ asset('css/createprofile.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -485,16 +485,17 @@
 				</div>
 
 				<div class="row">
-					<div class="staff-field col-md-6">
+					<div class="staff-field col-md-12">
 						<div class="field-label">
 							{{Form::label('email', 'Email')}} <span style="color:Red;">*</span>
 						</div>
 						<div class="field-content">
 							{{Form::email('email', $employee->user->email , ['readonly', 'required', 'placeholder' => 'Email Address', 'class' => 'form-control', 'id' => 'email'])}}
+							{{ Form::hidden('email_confirmation', $employee->user->email) }}
 						</div>
 					</div>
 
-					<div class="staff-field col-md-6">
+					{{-- <div class="staff-field col-md-6">
 						<div class="field-label">
 							{{Form::label('email_confirmation', 'Confirm Email')}} <span style="color:Red;">*</span>
 						</div>
@@ -502,7 +503,7 @@
 							{{Form::text('email_confirmation', null, ['required', 'placeholder' => 'Confirm your Email Address', 'class' => 'form-control', 'id' => 'email_confirmation'])}}
 							<p class='validation-error'></p>
 						</div>
-					</div>
+					</div> --}}
 				</div>
 
 				<div class="row">
@@ -687,25 +688,25 @@
 </script>
 <script src='{{ asset("js/multiselect.js") }}'></script>
 <script>
-//	$(document).ready(function() {
-//		$('.multiselect-ui').multiselect();
-//	});
+	$(document).ready(function() {
+		$('.multiselect-ui').multiselect();
+	});
 </script>
 <script>
-	$('#submit_btn').attr('disabled', true);
-	$('#email_confirmation').on('blur', function(){
-		var confirm = $(this).val();
-		var pw = $('#email').val();
-		if(confirm != pw){
-			$('p.validation-error').show().text('Email does not match!');
-			$(this).css('border', '2px solid red');
-			$('#submit_btn').attr('disabled', true);
-		} else {
-			$('p.validation-error').hide();
-			$(this).css('border', '2px solid green');
-			$('#submit_btn').attr('disabled', false);
-		}
-	});
+	// $('#submit_btn').attr('disabled', true);
+	// $('#email_confirmation').on('blur', function(){
+	// 	var confirm = $(this).val();
+	// 	var pw = $('#email').val();
+	// 	if(confirm != pw){
+	// 		$('p.validation-error').show().text('Email does not match!');
+	// 		$(this).css('border', '2px solid red');
+	// 		$('#submit_btn').attr('disabled', true);
+	// 	} else {
+	// 		$('p.validation-error').hide();
+	// 		$(this).css('border', '2px solid green');
+	// 		$('#submit_btn').attr('disabled', false);
+	// 	}
+	// });
 </script>
 
 <script>

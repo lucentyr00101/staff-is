@@ -30,7 +30,8 @@ if($employee->profile_image_filepath != null){
 				<h3>{{$employee->fullname}}</h3>
 			</div>
 			@else
-			<div class="col-md-3 col-lg-3 profile-pic" align="center"> <img width='200' height='200' alt="User Pic" src="<?php echo asset("storage/profile_pictures") . '/' . $dp; ?>" class="img-circle img-responsive">
+			<div class="col-md-3 col-lg-3 profile-pic" align="center">
+				<img width='200' height='200' alt="User Pic" src="<?php echo asset("storage/profile_pictures") . '/' . $dp; ?>" class="img-circle img-responsive">
 				<h3>{{$employee->fullname}}</h3>
 			</div>
 			@endif

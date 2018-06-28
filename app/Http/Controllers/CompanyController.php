@@ -105,7 +105,7 @@ class CompanyController extends Controller
         }
 
         //schedule conversion start
-        if(count($company->company_schedule)){
+        if(($company->company_schedule != null) && (count($company->company_schedule))){
             foreach($company->company_schedule as $c){
                 $a = json_decode(json_encode($c), true);
                 $b[] = $a;
@@ -186,7 +186,7 @@ class CompanyController extends Controller
         $user_type = session()->get('user_type');
 
         //schedule conversion start
-        if(count($company->company_schedule)){
+        if(($company->company_schedule != null) && (count($company->company_schedule))){
             foreach($company->company_schedule as $c){
                 $a = json_decode(json_encode($c), true);
                 $b[] = $a;
@@ -315,6 +315,16 @@ class CompanyController extends Controller
             $company->working_location = $request->working_location_state;
 
             $company->telephone_number = $request->telephone;
+
+            //send email to admin after FIRST TIME of updating profile
+            if($company->login_count = 0){
+                $admins = User::where('user_type', 'admin')->get();
+                foreach($admins as $admin){
+                    Mail::send('email.new_company_registered', array('email' => $admin->email, 'company_profile_link' => url('/companies/'.$company->id)), function($message) {
+                        $message->to($admin->email, $admin->email)->subject('New Company Registration');
+                    });
+                }
+            }
 
             $company->login_count = 1;
 

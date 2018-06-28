@@ -18,7 +18,12 @@
 <div class="row">
 	<div>
 		{{Form::label('work_type', 'Work Type')}}
-		{{Form::select('work_type', ['Computer Jobs' => 'Computer Jobs', 'Driving Jobs' => 'Driving Jobs',  'Industrial Jobs' => 'Industrial Jobs',  'Management Jobs' => 'Management Jobs', 'Office Jobs' => 'Office Jobs', 'Sales Jobs' => 'Sales Jobs', 'Service Jobs' => 'Service Jobs', 'Teaching Jobs' => 'Teaching Jobs'], null, ['class' => 'form-control', 'required'])}}
+		{{Form::select('work_type', ['Computer Jobs' => 'Computer Jobs', 'Driving Jobs' => 'Driving Jobs',  'Industrial Jobs' => 'Industrial Jobs',  'Management Jobs' => 'Management Jobs', 'Office Jobs' => 'Office Jobs', 'Sales Jobs' => 'Sales Jobs', 'Service Jobs' => 'Service Jobs', 'Teaching Jobs' => 'Teaching Jobs', 'Other' => 'Other'], null, ['class' => 'form-control', 'required', 'id' => 'work_type_selector'])}}
+	</div>
+
+	<div id="other_work_type_container" style="display: none;">
+		{{Form::label('work_type_other', 'Other work type:')}}
+		{{ Form::text('work_type_other', null, ['class' => 'form-control', 'id' => 'work_type_other']) }}
 	</div>
 	
 	<div>

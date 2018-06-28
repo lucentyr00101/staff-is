@@ -43,7 +43,7 @@ class WorkforceManagerController extends Controller
     {
         $company = Company::find(session()->get('company_id'));
         //schedule conversion start
-        if(count($company->company_schedule)){
+        if( ($company->company_schedule != null) && (count($company->company_schedule)) ){
             foreach($company->company_schedule as $c){
                 $a = json_decode(json_encode($c), true);
                 $b[] = $a;
@@ -121,7 +121,11 @@ class WorkforceManagerController extends Controller
         ]);
         $workforce = new Workforce;
         $workforce->company_id = session()->get('company_id');
-        $workforce->work_type = $request->work_type;
+        if($request->work_type == 'other'){
+            $workforce->work_type = $request->work_type_other;
+        } else {
+            $workforce->work_type = $request->work_type;
+        }
         $workforce->work_location = $request->work_location;
         $workforce->extra_requirements = $request->extra_requirements;
         $workforce->employee_required = $request->employee_required;
@@ -190,7 +194,7 @@ class WorkforceManagerController extends Controller
         }
 
         //schedule conversion start
-        if(count($workforces->task_schedule)){
+        if(($company->company_schedule != null) && (count($workforces->task_schedule))){
             foreach($workforces->task_schedule as $c){
                 $a = json_decode(json_encode($c), true);
                 $b[] = $a;
@@ -266,7 +270,7 @@ class WorkforceManagerController extends Controller
     {
         $workforces = Workforce::find($id);
         //schedule conversion start
-        if(count($workforces->task_schedule)){
+        if(($company->company_schedule != null) && (count($workforces->task_schedule))){
             foreach($workforces->task_schedule as $c){
                 $a = json_decode(json_encode($c), true);
                 $b[] = $a;

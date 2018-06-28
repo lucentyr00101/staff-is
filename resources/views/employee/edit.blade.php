@@ -391,23 +391,25 @@ if($employee->dp != null){
                     </tbody>
                 </table>
 
-                <table class="table">
-                    <h2 style="border-bottom:2px solid #a9a9a9;">Account Details</h2>
-                    <tbody>
-                        <tr>
-                            <th>Old Password:</th>
-                            <td>{{Form::password('old_password', ['placeholder' => 'Old Password', 'class' => 'form-control'])}}</td>
-                        </tr>
-                        <tr>
-                            <th>New Password:</th>
-                            <td>{{Form::password('password', ['placeholder' => 'New Password', 'class' => 'form-control'])}}</td>
-                        </tr>
-                        <tr>
-                            <th>Confirm Password:</th>
-                            <td>{{Form::password('password_confirmation', ['placeholder' => 'Confirm Password', 'class' => 'form-control'])}}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                @if(Auth::user()->user_type != 'admin')
+                    <table class="table">
+                        <h2 style="border-bottom:2px solid #a9a9a9;">Account Details</h2>
+                        <tbody>
+                            <tr>
+                                <th>Old Password:</th>
+                                <td>{{Form::password('old_password', ['placeholder' => 'Old Password', 'class' => 'form-control'])}}</td>
+                            </tr>
+                            <tr>
+                                <th>New Password:</th>
+                                <td>{{Form::password('password', ['placeholder' => 'New Password', 'class' => 'form-control'])}}</td>
+                            </tr>
+                            <tr>
+                                <th>Confirm Password:</th>
+                                <td>{{Form::password('password_confirmation', ['placeholder' => 'Confirm Password', 'class' => 'form-control'])}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                @endif
 
                 <table class="table">
                     <h2 style="border-bottom:2px solid #a9a9a9;">Contact Details</h2>

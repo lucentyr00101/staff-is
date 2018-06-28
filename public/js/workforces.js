@@ -25,3 +25,20 @@ $(document).on('click', '.rem-schedule', function(){
 	$(this).parent().parent().remove();
 	console.log(sched_counter);
 });
+
+$('#work_type_selector').on('change',function() {
+	var value = $(this).val();
+	if(value == 'Other'){
+		$('#other_work_type_container').show();
+	} else {
+		$('#other_work_type_container').hide();
+	}
+});
+
+$('#other_work_type_container input').on('keypress blur', function(){
+	if($(this).val() == ''){
+		$(this).css('border', '1px solid red');
+	} else {
+		$(this).css('border', '1px solid green');
+	}
+});

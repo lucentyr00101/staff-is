@@ -179,8 +179,8 @@
 							<div class="field-label">
 								<label for="country">Select Country:</label> <span style="color:Red;">*</span>
 							</div>
-							<div class="field-content"">
-								<select class='form-control' id="branch_country" name ="branch_country" required></select>
+							<div class="field-content">
+								<select class='form-control' id="branch_country" name="branch_country" required></select>
 							</div>
 						</div>
 
@@ -244,7 +244,7 @@
 			</div>
 
 			<div class="field-container">
-				<h2 class="fs-title">Other Details</h2>
+				{{-- <h2 class="fs-title">Other Details</h2> --}}
 				<div class="row">
 					<div class="staff-field col-md-6">
 						<div class="field-label">

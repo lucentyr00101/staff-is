@@ -103,7 +103,8 @@ class RegisterController extends Controller
 
                 if($user){
                     $email_db = SendEmail::where('email_for', 'New Employee')->first();
-                    Mail::send('email.employee_welcome', array('email' => $request->email), function($message) use($request, $email_db) {
+
+                    $send = Mail::send('email.employee_welcome', array('email' => $request->email, 'body' => $email_db->body), function($message) use($request, $email_db) {
                         $message->to($request->email, $request->email)->subject($email_db->subject);
                     });
 
@@ -168,6 +169,11 @@ class RegisterController extends Controller
                     Mail::send('email.employee_welcome', array('email' => $request->email, 'body' => $email_db->body), function($message) use($request, $email_db) {
                         $message->to($request->email, $request->email)->subject($email_db->subject);
                     });
+
+                    Mail::send('email.employee_welcome', array('email' => $request->email, 'body' => $email_db->body), function($message) use($request, $email_db) {
+                        $message->to($request->email, $request->email)->subject($email_db->subject);
+                    });
+
                     $company = new Company;
                     $company->user_id = $user->id;
                     $company->fullname = $request->fullname;

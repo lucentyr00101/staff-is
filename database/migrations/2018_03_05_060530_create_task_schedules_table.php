@@ -17,7 +17,7 @@ class CreateTaskSchedulesTable extends Migration
             $table->increments('id');
             $table->integer('workforce_id')->unsigned()->nullable();
             $table->foreign('workforce_id')->references('id')->on('workforces')->onDelete('cascade');
-            $table->string('schedule_day')->nullable();
+            $table->string('schedule_date')->nullable();
             $table->string('schedule_time_in')->nullable();
             $table->string('schedule_time_out')->nullable();
             $table->timestamps();

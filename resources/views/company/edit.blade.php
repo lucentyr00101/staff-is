@@ -208,21 +208,23 @@ if($company->profile_image_filepath != null){
 
 
                 <!-- Account Details (Password Reset) -->
-                <h2 style="border-bottom:2px solid #a9a9a9">Account Details</h2>
-                <div class="form-group">
-                    {{ Form::label('password', 'Old Password') }} <i>Leave this field empty if you don't want to change your password</i>
-                    {{Form::password('old_password', ['placeholder' => 'Old Password', 'class' => 'form-control']) }}
-                </div>
+                @if(Auth::user()->user_type != 'admin')
+                    <h2 style="border-bottom:2px solid #a9a9a9">Account Details</h2>
+                    <div class="form-group">
+                        {{ Form::label('password', 'Old Password') }} <i>Leave this field empty if you don't want to change your password</i>
+                        {{Form::password('old_password', ['placeholder' => 'Old Password', 'class' => 'form-control']) }}
+                    </div>
 
-                <div class="form-group">
-                    {{ Form::label('password', 'Password') }} <i>Leave this field empty if you don't want to change your password</i>
-                    {{Form::password('password', ['placeholder' => 'New Password', 'class' => 'form-control']) }}
-                </div>
+                    <div class="form-group">
+                        {{ Form::label('password', 'Password') }} <i>Leave this field empty if you don't want to change your password</i>
+                        {{Form::password('password', ['placeholder' => 'New Password', 'class' => 'form-control']) }}
+                    </div>
 
-                <div class="form-group">
-                    {{ Form::label('password_confirmation') }} <i>Leave this field empty if you don't want to change your password</i>
-                    {{Form::password('password_confirmation', ['placeholder' => 'Password Confirmation', 'class' => 'form-control']) }}
-                </div>
+                    <div class="form-group">
+                        {{ Form::label('password_confirmation') }} <i>Leave this field empty if you don't want to change your password</i>
+                        {{Form::password('password_confirmation', ['placeholder' => 'Password Confirmation', 'class' => 'form-control']) }}
+                    </div>
+                @endif
 
                 {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}                
             </div>
